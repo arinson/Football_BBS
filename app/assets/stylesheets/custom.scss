@@ -31,15 +31,30 @@ h1, h2 {
     background-size: cover;
     background-color: #464646;
   }
-  
+
   .top-hero-container {
     padding-top: 220px;
     h1 {
-      font-size: 56px;
+      font-size: 80px;
       margin-bottom: 20px;
     }
   
     h2 {
       margin-bottom: 60px;
+    }
+  }
+
+  /* header*/
+  
+  .navbar-transparent {
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    a {
+      color: #fff !important;
+    }
+  
+    .navbar-brand {
+      padding: 0px;
+      margin-top: 15px;
     }
   }
