@@ -58,3 +58,28 @@ h1, h2 {
       margin-top: 15px;
     }
   }
+  /* sign up*/
+
+  .form-control {
+    height: 45px;
+  }
+  
+  .users-new-wrapper {
+    width: 100vw;
+    height: 130vh;
+    background-image: image-url("S__24707084.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+  
+    .users-new-container {
+      padding-top: 220px;
+  
+      .field {
+        margin-bottom: 20px;
+        color: #fff;
+      }
+    }
+  }
