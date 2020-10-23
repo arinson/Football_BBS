@@ -83,3 +83,15 @@ h1, h2 {
       }
     }
   }
+ 
+  /* errors_messages*/
+
+  #error_explanation{
+    h2{
+      color:red;
+      font-size: 1em;
+    }
+  }
+  .errors{
+    color: red;
+  }
