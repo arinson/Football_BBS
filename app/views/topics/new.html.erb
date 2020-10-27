@@ -1,2 +1,29 @@
-<h1>Topics#new</h1>
-<p>Find me in app/views/topics/new.html.erb</p>
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">新規投稿</h1>
+        <%= form_for @topic do |f| %>
+          
+          <div class="field">
+            <%= f.label :タイトル %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :画像 %>
+            <%= f.file_field :image, class: 'form-control'%>
+          </div>
+
+          <div class="field">
+            <%= f.label :説明文 %>
+            <%= f.text_area :description, class: 'form-control',  size: "20x10" %>
+          </div>
+
+          <%= f.submit '投稿する', class: 'btn btn-black btn-block' %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
