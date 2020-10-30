@@ -75,13 +75,13 @@ h1, h2 {
     font-size: 0.8em;
     line-height: 1.7em;
   }
-  /* sign up,login*/
+  /* sign up,login,edit*/
 
   .form-control {
     height: 45px;
   }
   
-  .users-new-wrapper {
+  .users-new-wrapper{
     width: 100vw;
     height: 130vh;
     background-image: image-url("S__24707084.jpg");
@@ -92,7 +92,7 @@ h1, h2 {
     background-color: #464646;
   
     .users-new-container {
-      padding-top: 220px;
+      padding-top: 100px;
   
       .field {
         margin-bottom: 20px;
