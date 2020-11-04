@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render '/users/profile' %>
+  
+<div class="row mx-1 mx-lg-0 mb-5">
+  <div class="col-6 font-weight-bold d-flex justify-content-center">
+    <span class="border-bottom pb-1 border-dark">投稿一覧</span>
+  </div>
+  <div class="col-6 font-weight-bold d-flex justify-content-center">
+    <%=link_to 'いいね済み一覧', "#",class: "border-bottom pb-1 text-secondary"%>
+  </div>
+</div>
