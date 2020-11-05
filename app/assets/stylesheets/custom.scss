@@ -164,3 +164,38 @@ h1, h2 {
       }
     }
   }
+  /* プロフィール*/
+  .users-profile-wrapper {
+    padding-top: 70px;
+    background-color: #fafafa;
+  }
+  .mypage-main {
+    margin: 20px 0;
+    padding: 10px 0 ;
+    text-align: center;
+  }
+  
+  .mypage-info {
+    background-color: white;
+    padding: 15px 0;
+  }
+  
+  .mypage-img {
+    display: block;
+    text-align: center;
+  }
+  
+  .mypage-stats {
+    display: block;
+    padding: 1rem 1rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    display: block;
+  }
+  .circle {
+    border-radius: 50%;  
+    width: 200px;  
+    height: 200px;  
+    object-fit: cover; 
+    border: 1px solid #e8e8e8;
+  }
