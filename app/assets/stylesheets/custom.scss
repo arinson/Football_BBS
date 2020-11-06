@@ -166,7 +166,7 @@ h1, h2 {
   }
   /* プロフィール*/
   .users-profile-wrapper {
-    padding-top: 70px;
+    padding-top: 60px;
     background-color: #fafafa;
   }
   .mypage-main {
@@ -198,4 +198,37 @@ h1, h2 {
     height: 200px;  
     object-fit: cover; 
     border: 1px solid #e8e8e8;
+  }
+
+  /* プロフィール*/
+  .users-index-wrapper {
+    padding-top: 60px;
+    background-color: #fafafa;
+  }
+  .users-row {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  
+  .users {
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    li {
+      overflow: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(#EEEEEE,1.0);
+    }
+  }
+  .feed-circle {
+    text-align: left;
+    border-radius: 50%;  
+    width: 75px;  
+    height: 75px;  
+    object-fit: cover; 
+    border: 1px solid #e8e8e8;
+  }  
+  .user_name {
+    font-size: 20px;
+    margin: 0 20px;
   }
