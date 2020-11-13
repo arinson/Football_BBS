@@ -112,7 +112,7 @@ h1, h2 {
   .errors{
     color: red;
   }
-  /* 新規投稿ページ topics_new*/
+  /* 新規投稿ページ*/
   .btn-black {
     margin-top: 20px;
     color: #565656;
@@ -130,7 +130,7 @@ h1, h2 {
   .topic-new-wrapper {
     padding-top: 50px;
   }
-  /* 投稿一覧ページ(ホーム) topics_index*/
+  /* 投稿一覧ページ(ホーム) */
   .topic-index-wrapper {
     padding-top: 70px;
     background-color: #fafafa;
@@ -164,6 +164,32 @@ h1, h2 {
       }
     }
   }
+  /* 投稿詳細ページ */
+  .topic-show-header {
+    margin-top: 30px;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .topic-show-title {
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .topic-show-description {
+    background-color: white;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 20px 10px;
+  }
+  
+  .topic-show-image {
+    background-color: white;
+    padding: 30px 0;
+  }
+  
   /* プロフィール*/
   .users-profile-wrapper {
     padding-top: 60px;
@@ -200,7 +226,7 @@ h1, h2 {
     border: 1px solid #e8e8e8;
   }
 
-  /* プロフィール*/
+  /* 利用者一覧ページ*/
   .users-index-wrapper {
     padding-top: 60px;
     background-color: #fafafa;

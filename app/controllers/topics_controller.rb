@@ -3,6 +3,11 @@ class TopicsController < ApplicationController
     @topics = Topic.all.includes(:like_users)
   end
 
+  def show
+    @topic = Topic.find_by(id: params[:id])
+    @user = @topic.user
+  end
+
   def new
     @topic = Topic.new
   end
