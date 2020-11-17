@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   #topics
   get "topics/new"
 
-  resources :topics
+  resources :topics do
+    resources :comments, only: [:create, :destroy]
+  end
 
   get "likes/index"
   post "/likes", to: "likes#create"

@@ -14,7 +14,7 @@
     </div>
 
     
-    <div class="col-md-12 post-show-title">
+    <div class="col-md-12 topic-show-title">
         <%= @topic.title %>
     </div>
     <div class="col-md-12 topic-show-description">
@@ -23,5 +23,10 @@
     <div class="col-md-12 topic-show-image">
          <%= image_tag @topic.image.url %>
     </div>
+    <div class="col-md-12 topic-show-comment">
+      <div class="comment_<%= @topic.id %>">
+        <%= render partial: 'comments/comment', locals: { comment: @comment, topic: @topic } %>
+      </div>
     </div>
+  </div>
 </div>

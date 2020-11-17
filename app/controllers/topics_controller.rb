@@ -6,6 +6,8 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find_by(id: params[:id])
     @user = @topic.user
+    @comments = @topic.comments
+    @comment = Comment.new
   end
 
   def new

@@ -1,0 +1,29 @@
+<h1 class="text-center">コメント一覧</h1>
+<div class="comment-title"><i class="far fa-comments"></i>コメント</div>
+    <% @comments.each do |comment| %>
+    <% if comment.user.image? %>
+        <%= image_tag comment.user.image.url, class: "feed-circle" %>
+    <% else %>
+        <%= image_tag "8.ppg", class: "feed-circle" %>
+    <% end %>
+      <span class="name">
+      <%= link_to(comment.user.username, "/users/#{comment.user.id}", :style=>"color:black;") %>
+      </span>
+      <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      <% if comment.user.id == current_user.id %>
+        <%= link_to "削除", topic_comment_path(@topic, comment), method: :delete,
+                                    data: { confirm: "本当に削除してもいいですか?" }, remote: true %>
+      <% end %>
+      <div class="comment-show">
+        <%= comment.content %>
+      </div>
+      <% end %>
+
+<%# コメントフォーム %>
+<div class="comment-row">
+    <%= form_with(model:[@topic, @comment], method: :post, remote: true ) do |f| %>
+      <%= f.text_area :content, class: "form-control", placeholder: "コメント本文(100文字以内)", size: "20x5" %>
+      <%= f.hidden_field :topic_id, value: @topic.id %>
+      <%= f.submit 'コメントする', class: "btn btn-primary comment-btn" %>
+    <% end %>
+</div>
