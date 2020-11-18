@@ -17,6 +17,13 @@
        登録日時：<%=@user.created_at.strftime("%Y-%m-%d %H:%M")%><br>
        投稿数: <%= "#" %>件<br>
        いいね済み：<%="#"%>件<br>
+       <section class="stats">
+       <%= render 'devise/shared/stats' %>
+       </section>
+       <section>
+       <%= render 'follow_form' if user_signed_in? %>
+       </section>
+
       </div>
 
    </div>

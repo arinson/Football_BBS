@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users
 
   get "users/:id/show" => "users#show"
 
@@ -11,6 +10,12 @@ Rails.application.routes.draw do
   #topics
   get "topics/new"
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :topics do
     resources :comments, only: [:create, :destroy]
   end
@@ -18,6 +23,8 @@ Rails.application.routes.draw do
   get "likes/index"
   post "/likes", to: "likes#create"
   delete "/likes", to: "likes#destroy"
+
+  resources :relationships, only: [:create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
