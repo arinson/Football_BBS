@@ -1,22 +1,18 @@
 <% provide(:title, @title) %>
 <div class="container show-follow-container">
-  <div class="main-title">
+  <h1 class="text-center">
     <%= icon("far", "futbol", class: "soccer-icon") %>
-    <% if @title == "Followers" %>
-      フォロワー
-    <% else %>
-      フォロー
-    <% end %>
+       <%= @title %>
     <%= icon("far", "futbol", class: "soccer-icon") %>
-  </div>
+  </h1>
   <div class="row">
     <div class="col-sm-12 col-md-4">
       <div class="stats">
         <%= render 'devise/shared/stats' %>
       </div>
     </div>
-    <div class="main-feed col-sm-12 col-md-8">
-      <ol class="posts">
+    <div class="col-md-8 col-md-offset-3">
+      <ol class="topics">
       <% if @users.any? %>
         <ul class="users follow">
           <%= render @users %>
