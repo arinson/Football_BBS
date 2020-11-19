@@ -1,6 +1,4 @@
-<div class="users-profile-wrapper">
-  <div class="container">
-     <h1 class="text-center">プロフィール</h1>
+  <h1 class="text-center">プロフィール</h1>
     <div class="row mypage-main">
      <div class="mypage-info col-md-6 col-md-offset-3">
        <div class="mypage-img">
@@ -10,12 +8,11 @@
           <%= image_tag "8.png", class: "circle" %>
         <% end %>
        </div>
-
-      <div class="row mypage-stats">
+       <div class="row mypage-stats">
         ユーザー名:<%= @user.username %><br>
         登録日時：<%=@user.created_at.strftime("%Y-%m-%d %H:%M")%><br>
-        投稿数: <%= "#" %>件<br>
-        いいね済み：<%="#"%>件<br>
+        投稿数: <%=@user.topics.count %>件<br>
+        いいね済み：<%=@user.likes.count%>件<br>
        <section class="stats">
        <%= render 'devise/shared/stats' %>
        </section>
@@ -26,4 +23,3 @@
    </div>
   </div>
  </div>
-</div>
