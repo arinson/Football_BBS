@@ -1,13 +1,17 @@
 <% provide(:title, @title) %>
-<div class="container show-follow-container">
+<div class="show-follow-wrapper">
+<div class="container">
   <h1 class="text-center"><%= @title %></h1>
-  <div class="row">
-    <div class="col-sm-12 col-md-4">
+  <div class="row user-main">
+    <div class="user-info col-sm-12 col-md-4">
+      <div class="user-area">
+        <%= render 'devise/shared/user_info' %>
+      </div>
       <div class="stats">
         <%= render 'devise/shared/stats' %>
       </div>
     </div>
-    <div class="col-md-8 col-md-offset-3">
+    <div class="col-sm-12 col-md-8">
       <ol class="topics">
       <% if @users.any? %>
         <ul class="users follow">
@@ -17,4 +21,5 @@
       </ol>
     </div>
   </div>
+</div>
 </div>

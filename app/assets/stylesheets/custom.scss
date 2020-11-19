@@ -254,7 +254,7 @@ h1, h2 {
     object-fit: cover; 
     border: 1px solid #e8e8e8;
   }  
-  .user_name {
+  .user-name {
     font-size: 20px;
     margin: 0 20px;
   }
@@ -303,7 +303,41 @@ h1, h2 {
 }
 
 /* フォロー、フォロワー一覧画面 */
-.show-follow-container {
+.show-follow-wrapper {
   padding-top: 60px;
   padding-bottom: 100px;
+  background-color: #fafafa;
+}
+.user-main {
+  margin: 20px 0;
+  padding: 10px 0 ;
+}
+.user-info {
+  background-color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+.user-area {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+.name {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 23px;
+  font-weight: bold;
+}
+.stats {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  a {
+    font-size: 15px;
+  }
+  span {
+    display: inline;
+  }
+  span {
+  display: block;
+}
 }
