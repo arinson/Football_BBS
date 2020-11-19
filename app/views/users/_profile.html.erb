@@ -1,31 +1,28 @@
 <div class="users-profile-wrapper">
- <div class="container">
+  <div class="container">
      <h1 class="text-center">プロフィール</h1>
-    
     <div class="row mypage-main">
      <div class="mypage-info col-md-6 col-md-offset-3">
-      <div class="mypage-img">
+       <div class="mypage-img">
         <% if @user.image? %>
           <%= image_tag @user.image.url, class: "circle" %>
         <% else %>
           <%= image_tag "8.png", class: "circle" %>
         <% end %>
-      </div>
+       </div>
 
       <div class="row mypage-stats">
-       ユーザー名:<%= @user.username %><br>
-       登録日時：<%=@user.created_at.strftime("%Y-%m-%d %H:%M")%><br>
-       投稿数: <%= "#" %>件<br>
-       いいね済み：<%="#"%>件<br>
+        ユーザー名:<%= @user.username %><br>
+        登録日時：<%=@user.created_at.strftime("%Y-%m-%d %H:%M")%><br>
+        投稿数: <%= "#" %>件<br>
+        いいね済み：<%="#"%>件<br>
        <section class="stats">
        <%= render 'devise/shared/stats' %>
        </section>
        <section>
        <%= render 'follow_form' if user_signed_in? %>
        </section>
-
       </div>
-
    </div>
   </div>
  </div>
