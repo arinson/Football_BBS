@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   def index
     @likes_topics = current_user.like_topics
+    @user = User.find_by(id: current_user.id)
   end
 
   def create
