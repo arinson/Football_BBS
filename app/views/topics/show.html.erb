@@ -7,7 +7,7 @@
         <%= image_tag "8.png", class: "feed-circle" %>
     <% end %>
      
-     <span class="name">
+     <span class="user-name">
       <%= link_to(@user.username, "/users/#{@user.id}", :style=>"color:black;") %>
      </span>
       <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %>に更新

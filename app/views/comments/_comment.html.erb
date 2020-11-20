@@ -6,7 +6,7 @@
     <% else %>
         <%= image_tag "8.ppg", class: "feed-circle" %>
     <% end %>
-      <span class="name">
+      <span class="user-name">
       <%= link_to(comment.user.username, "/users/#{comment.user.id}", :style=>"color:black;") %>
       </span>
       <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>

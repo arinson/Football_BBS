@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:like_users)
+    @user = User.find_by(params[:id])
   end
 
   def show
