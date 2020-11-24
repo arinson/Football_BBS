@@ -1,6 +1,6 @@
 <div class="topic-index-wrapper">
   <div class="container">
-  <div class="row user-main">
+   <div class="row user-main">
    <div class="user-info col-sm-12 col-md-4">
       <div class="user-area">
         <%= render 'devise/shared/user_info' %>
@@ -9,7 +9,7 @@
         <%= render 'devise/shared/stats' %>
       </div>
     </div>
-    <div class="col-sm-12 col-md-8">
+      <div class="col-sm-12 col-md-8"> 
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <%= link_to topics_path, :style=>"color:black;" do %><i class="far fa-clone"> </i> 投稿一覧<% end %>
@@ -19,10 +19,16 @@
         </li>
       </ul>
        <% @topics.each do |topic| %>
+          <% if topic.user.image? %>
+           <%= image_tag topic.user.image.url, class: "feed-circle" %>
+          <% else %>
+          <%= image_tag "8.png", class: "feed-circle" %>
+          <% end %>   
+          <span class="user-name">
+            <%= link_to(topic.user.username, "/users/#{topic.user.id}", :style=>"color:black;") %>
+            </span>
+            <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>に更新
          <div class="topic-index-single">
-            <h2 class="topic-author">   
-              <%= topic.user.username %>
-            </h2>
             <%= image_tag topic.image.url %>
             <div class="topic-title">
             タイトル：<span class="title"><%= link_to(topic.title, "/topics/#{topic.id}", :style=>"color:black;") %></span>
@@ -35,7 +41,7 @@
             </div>
           </div>
       <% end %>
+      </div>
      </div>
-    </div>
   </div>
 </div>
