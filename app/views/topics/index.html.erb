@@ -1,47 +1,57 @@
 <div class="topic-index-wrapper">
   <div class="container">
    <div class="row user-main">
-   <div class="user-info col-sm-12 col-md-4">
-      <div class="user-area">
-        <%= render 'devise/shared/user_info' %>
+      <div class="user-info col-sm-12 col-md-4">
+       <div class="user-area">
+         <%= render 'devise/shared/user_info' %>
+       </div>
+       <div class="stats">
+         <%= render 'devise/shared/stats' %>
+       </div>
       </div>
-      <div class="stats">
-        <%= render 'devise/shared/stats' %>
-      </div>
-    </div>
       <div class="col-sm-12 col-md-8"> 
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <%= link_to topics_path, :style=>"color:black;" do %><i class="far fa-clone"> </i> 投稿一覧<% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to likes_index_path, :style=>"color:black;" do %><i class="fas fa-heart"></i> いいね済み一覧<% end %>
-        </li>
-      </ul>
+       <ul class="nav nav-tabs">
+         <li class="nav-item">
+           <%= link_to topics_path, :style=>"color:black;" do %><i class="far fa-clone"> </i> 投稿一覧<% end %>
+         </li>
+         <li class="nav-item">
+            <%= link_to likes_index_path, :style=>"color:black;" do %><i class="fas fa-heart"></i> いいね済み一覧<% end %>
+         </li>
+       </ul>
        <% @topics.each do |topic| %>
           <% if topic.user.image? %>
            <%= image_tag topic.user.image.url, class: "feed-circle" %>
           <% else %>
-          <%= image_tag "8.png", class: "feed-circle" %>
-          <% end %>   
+           <%= image_tag "8.png", class: "feed-circle" %>
+          <% end %>  
           <span class="user-name">
             <%= link_to(topic.user.username, "/users/#{topic.user.id}", :style=>"color:black;") %>
-            </span>
-            <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>に更新
+          </span>
+            
+           <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>に更新
+            
+          <% if topic.user.id == current_user.id %>
+             <%= link_to edit_topic_path(topic), :style=>"color:black;" do %><i class="fas fa-pencil-alt"></i>編集する<% end %>
+             <%= link_to topic, :style=>"color:black;", method: :delete,data: { confirm: "削除してもいいですか?" } do %>
+             <i class="fas fa-trash-alt"></i>投稿削除<% end %>
+          <% end %>
+
          <div class="topic-index-single">
-            <%= image_tag topic.image.url %>
-            <div class="topic-title">
-            タイトル：<span class="title"><%= link_to(topic.title, "/topics/#{topic.id}", :style=>"color:black;") %></span>
+           <div class="topic-image">
+             <%= image_tag topic.image.url %>
            </div>
-            <p class="topic-text">
-              <%= topic.description %>
-            </p>
-            <div id="likes_buttons_<%= topic.id %>">
+           <div class="topic-title">
+             タイトル：<span class="title"><%= link_to(topic.title, "/topics/#{topic.id}", :style=>"color:black;") %></span>
+           </div>
+           <p class="topic-text">
+             <%= topic.description %>
+           </p>
+           <div id="likes_buttons_<%= topic.id %>">
              <%= render partial: 'likes/like', locals: { topic: topic} %>
-            </div>
+           </div>
           </div>
       <% end %>
       </div>
-     </div>
+    </div>
   </div>
 </div>

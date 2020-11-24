@@ -7,16 +7,13 @@ Rails.application.routes.draw do
   root "pages#index"
   get "pages/show"
 
-  #topics
-  get "topics/new"
-
   resources :users do
     member do
       get :following, :followers
     end
   end
 
-  resources :topics do
+  resources :topics, only: [:index, :create, :new, :edit, :show, :update, :destroy] do
     resources :comments, only: [:create, :destroy]
   end
 
