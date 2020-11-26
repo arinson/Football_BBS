@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.includes(:like_users)
+    @topics = Topic.all.includes(:like_users).page(params[:page]).per(10)
     @user = User.find_by(id: current_user.id)
   end
 
