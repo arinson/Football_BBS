@@ -1,0 +1,24 @@
+Topic.create!(title: "UEFAチャンピオンズリーグ",
+    description: "今年はバルサに優勝してほしいな〜〜",
+    image: File.open('./public/uploads/topic/image/2/gfx-messi-cristiano-ronaldo_1so1esj8bpxv51v6qe6skc6yye.png'),
+    user_id: 1)
+Topic.create!(title: "UEFAチャンピオンズリーグ",
+    description: "今年はバイエル以外に優勝してほしい！！！",
+    image: File.open('./public/uploads/topic/image/3/20191022_Ballondor-GettyImages.jpg'),
+    user_id: 2)
+Topic.create!(title: "マラドーナ",
+    description: "マラドーナ60年間お疲れ様でした。",
+    image: File.open('./public/uploads/topic/image/1/マラドーナ２.jpg'),
+    user_id: 3)
+Topic.create!(title: "マラドーナ",
+    description: "サッカー界の神様マラドーナ、亡くなってしまって悲しい。",
+    image: File.open('./public/uploads/topic/image/1/マラドーナ.jpg'),
+    user_id: 4)
+Topic.create!(title: "セリエA",
+    description: "クリロナ得点ランキングTOPタイ。流石にあの年齢でこのパフォーマンスはすごい",
+    image: File.open('./public/uploads/topic/image/1/クリロナ.jpg'),
+    user_id: 5)
+Topic.create!(title: "UEFAチャンピオンズリーグ",
+    description: "さてさてそろそろベスト１６の顔ぶれが決まってきましたね！！抽選でバイエルとあたりたくないだろなww",
+    image: File.open('./public/uploads/topic/image/1/チャンピョンズリーグ.jpg'),
+    user_id: 6)
