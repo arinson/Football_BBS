@@ -1,29 +1,23 @@
 <div class="topic-index-wrapper">
   <div class="container">
-   <div class="row">
-       <%= render 'layouts/search_form' %>
-    </div>
-
+  <div class="search_form">
+        <%= render 'layouts/search_form' %>
+     </div>
    <div class="row user-main">
       <div class="user-info col-sm-12 col-md-4">
-       <div class="user-area">
+        <div class="user-area">
          <%= render 'devise/shared/user_info' %>
-       </div>
-       <div class="stats">
+        </div>
+        <div class="stats">
          <%= render 'devise/shared/stats' %>
-       </div>
-     </div>
-    
+        </div>
+      </div>
       <div class="col-sm-12 col-md-8"> 
-       <ul class="nav nav-tabs">
-         <li class="nav-item">
-           <%= link_to topics_path, :style=>"color:black;" do %><i class="far fa-clone"> </i> 投稿一覧<% end %>
-         </li>
-         <li class="nav-item">
-            <%= link_to likes_index_path, :style=>"color:black;" do %><i class="fas fa-heart"></i> いいね済み一覧<% end %>
-         </li>
-       </ul>
-       <% @topics.each do |topic| %>
+       <div class="search-title">
+         <h2> 『検索結果』 </h2>
+       </div>
+      <% if @search_topics.any? %>
+       <% @search_topics.each do |topic| %>
           <% if topic.user.image? %>
            <%= image_tag topic.user.image.url, class: "feed-circle" %>
           <% else %>
@@ -55,9 +49,12 @@
              <%= render partial: 'likes/like', locals: { topic: topic} %>
            </div>
           </div>
-      <% end %>
-      <%= paginate @topics %>
-      </div>
+        <% end %>
+        <%= paginate @search_topics %>
+       </div>
+      <% else %>
+       <%= render 'topics/no-contents' %>
+     <% end %> 
     </div>
   </div>
 </div>

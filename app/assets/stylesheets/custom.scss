@@ -343,3 +343,19 @@ h1, h2 {
   display: block;
 }
 }
+/* 検索機能 */
+.search-title{
+  text-align: center;
+}
+.no-contents{
+  text-align: center;
+}
+.search-container {
+  margin: 1rem 1rem;
+}
+.search-row{
+&-btn{
+  background: #3879D9;
+  color: #fff;
+}
+}

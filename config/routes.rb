@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root "pages#index"
   get "pages/show"
 
+  get "search", to: "topics#search"
+
   resources :users do
     member do
       get :following, :followers

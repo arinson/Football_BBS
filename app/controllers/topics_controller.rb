@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:like_users).page(params[:page]).per(10).order(created_at: :desc)
     @user = User.find_by(id: current_user.id)
+    @q = Topic.ransack(params[:q])
+    @search_topics = @q.result.page(params[:page]).per(10)
   end
 
   def show
@@ -44,9 +46,19 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+  def search
+    @user = User.find_by(id: current_user.id)
+    @q = Topic.search(search_params)
+    @search_topics = @q.result.page(params[:page]).per(10)
+  end
+
   private
 
   def topic_params
     params.require(:topic).permit(:title, :image, :description)
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 end
