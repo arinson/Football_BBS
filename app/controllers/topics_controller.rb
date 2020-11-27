@@ -49,7 +49,7 @@ class TopicsController < ApplicationController
   def search
     @user = User.find_by(id: current_user.id)
     @q = Topic.search(search_params)
-    @search_topics = @q.result.page(params[:page]).per(10)
+    @search_topics = @q.result.page(params[:page]).per(10).order(created_at: :desc)
   end
 
   private
